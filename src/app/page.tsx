@@ -215,7 +215,7 @@ export default function Home() {
               {/* Service 2 */}
               <div className="p-8 bg-[var(--teal)] text-white rounded-lg">
                 <div className="text-white/30 text-5xl font-bold mb-4">02</div>
-                <h3 className="text-2xl mb-3 text-[var(--soft-gold)]">Custom AI Tooling</h3>
+                <h3 className="text-2xl mb-3 text-white">Custom AI Tooling</h3>
                 <p className="text-white/70 mb-6">
                   We build bespoke AI solutions that integrate with your existing
                   systems and workflows, designed to solve your specific challenges.
