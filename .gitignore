@@ -12,6 +12,7 @@
 
 # testing
 /coverage
+.nyc_output/
 
 # next.js
 /.next/
@@ -23,6 +24,7 @@
 # misc
 .DS_Store
 *.pem
+*.log
 
 # debug
 npm-debug.log*
@@ -31,7 +33,10 @@ yarn-error.log*
 .pnpm-debug.log*
 
 # env files (can opt-in for committing if needed)
-.env*
+.env
+.env.local
+.env.production
+.env*.local
 
 # vercel
 .vercel
@@ -39,3 +44,11 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# database
+/postgres_data
+
+# ai3-consulting specific
+*.bak
+*.swp
+*~

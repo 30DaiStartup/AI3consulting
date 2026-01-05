@@ -1,0 +1,12 @@
+export { default as HeroSection } from "./HeroSection";
+export { default as SeatAvailabilityBadge } from "./SeatAvailabilityBadge";
+export { default as TestimonialCard } from "./TestimonialCard";
+export { default as SocialProofSection } from "./SocialProofSection";
+export { default as PainPointCard } from "./PainPointCard";
+export { default as PainPointsSection } from "./PainPointsSection";
+export { default as CurriculumSection } from "./CurriculumSection";
+export { default as ComparisonTable } from "./ComparisonTable";
+export { default as FAQSection } from "./FAQSection";
+export { default as FinalCTASection } from "./FinalCTASection";
+export { default as ROICalculatorPlaceholder } from "./ROICalculatorPlaceholder";
+export { default as QuizPlaceholder } from "./QuizPlaceholder";

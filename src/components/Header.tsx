@@ -1,26 +1,40 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import Logo from "./Logo";
 
 const navLinks = [
-  { href: "/", label: "Home" },
-  { href: "/services", label: "Services" },
+  { href: "/", label: "Bootcamp" },
   { href: "/about", label: "About" },
   { href: "/contact", label: "Contact" },
 ];
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-[var(--light-gray)]">
+    <header
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        isScrolled
+          ? "bg-white/95 backdrop-blur-sm border-b border-[var(--light-gray)] shadow-sm"
+          : "bg-transparent"
+      }`}
+    >
       <div className="container">
         <nav className="flex items-center justify-between h-20">
           {/* Logo */}
           <Link href="/" className="relative z-10">
-            <Logo />
+            <Logo variant={isScrolled || isMenuOpen ? "default" : "light"} />
           </Link>
 
           {/* Desktop Navigation */}
@@ -29,16 +43,24 @@ export default function Header() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-[var(--text-secondary)] hover:text-[var(--navy)] transition-colors font-medium"
+                className={`font-medium transition-colors ${
+                  isScrolled
+                    ? "text-[var(--text-secondary)] hover:text-[var(--navy)]"
+                    : "text-white/80 hover:text-white"
+                }`}
               >
                 {link.label}
               </Link>
             ))}
             <Link
-              href="/contact"
-              className="btn btn-primary"
+              href="#calculator"
+              className={`btn ${
+                isScrolled
+                  ? "bg-[var(--soft-gold)] text-[var(--navy)] hover:bg-[var(--gold-hover)]"
+                  : "bg-white/20 text-white border border-white/30 hover:bg-white/30"
+              }`}
             >
-              Get Started
+              Calculate Your ROI
             </Link>
           </div>
 
@@ -50,18 +72,30 @@ export default function Header() {
           >
             <div className="w-6 h-5 flex flex-col justify-between">
               <span
-                className={`block h-0.5 bg-[var(--navy)] transition-transform origin-center ${
-                  isMenuOpen ? "rotate-45 translate-y-2" : ""
+                className={`block h-0.5 transition-all origin-center ${
+                  isMenuOpen
+                    ? "rotate-45 translate-y-2 bg-[var(--navy)]"
+                    : isScrolled
+                    ? "bg-[var(--navy)]"
+                    : "bg-white"
                 }`}
               />
               <span
-                className={`block h-0.5 bg-[var(--navy)] transition-opacity ${
-                  isMenuOpen ? "opacity-0" : ""
+                className={`block h-0.5 transition-opacity ${
+                  isMenuOpen
+                    ? "opacity-0"
+                    : isScrolled
+                    ? "bg-[var(--navy)]"
+                    : "bg-white"
                 }`}
               />
               <span
-                className={`block h-0.5 bg-[var(--navy)] transition-transform origin-center ${
-                  isMenuOpen ? "-rotate-45 -translate-y-2" : ""
+                className={`block h-0.5 transition-all origin-center ${
+                  isMenuOpen
+                    ? "-rotate-45 -translate-y-2 bg-[var(--navy)]"
+                    : isScrolled
+                    ? "bg-[var(--navy)]"
+                    : "bg-white"
                 }`}
               />
             </div>
@@ -85,11 +119,11 @@ export default function Header() {
                 </Link>
               ))}
               <Link
-                href="/contact"
-                className="btn btn-primary mt-4"
+                href="#calculator"
+                className="btn bg-[var(--soft-gold)] text-[var(--navy)] hover:bg-[var(--gold-hover)] mt-4"
                 onClick={() => setIsMenuOpen(false)}
               >
-                Get Started
+                Calculate Your ROI
               </Link>
             </div>
           </div>
