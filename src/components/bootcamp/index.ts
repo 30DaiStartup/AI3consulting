@@ -8,5 +8,5 @@ export { default as CurriculumSection } from "./CurriculumSection";
 export { default as ComparisonTable } from "./ComparisonTable";
 export { default as FAQSection } from "./FAQSection";
 export { default as FinalCTASection } from "./FinalCTASection";
-export { default as ROICalculatorPlaceholder } from "./ROICalculatorPlaceholder";
-export { default as QuizPlaceholder } from "./QuizPlaceholder";
+export { default as ROICalculator } from "./ROICalculator";
+export { default as HighAgencyQuiz } from "./HighAgencyQuiz";

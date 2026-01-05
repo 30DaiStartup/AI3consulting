@@ -4,9 +4,9 @@ import {
   HeroSection,
   SocialProofSection,
   PainPointsSection,
-  ROICalculatorPlaceholder,
+  ROICalculator,
   CurriculumSection,
-  QuizPlaceholder,
+  HighAgencyQuiz,
   ComparisonTable,
   FAQSection,
   FinalCTASection,
@@ -29,14 +29,14 @@ export default function Home() {
         {/* Pain Points - The problems we solve */}
         <PainPointsSection />
 
-        {/* ROI Calculator - Interactive tool (placeholder for now) */}
-        <ROICalculatorPlaceholder />
+        {/* ROI Calculator - Interactive tool */}
+        <ROICalculator />
 
         {/* Curriculum - 3-day breakdown */}
         <CurriculumSection />
 
-        {/* Quiz - High-agency assessment (placeholder for now) */}
-        <QuizPlaceholder />
+        {/* Quiz - High-agency assessment */}
+        <HighAgencyQuiz />
 
         {/* Comparison Table - Old way vs new way */}
         <ComparisonTable />
