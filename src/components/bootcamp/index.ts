@@ -10,3 +10,5 @@ export { default as FAQSection } from "./FAQSection";
 export { default as FinalCTASection } from "./FinalCTASection";
 export { default as ROICalculator } from "./ROICalculator";
 export { default as HighAgencyQuiz } from "./HighAgencyQuiz";
+export { default as RegistrationForm } from "./RegistrationForm";
+export { default as WaitlistForm } from "./WaitlistForm";
